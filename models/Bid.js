@@ -11,10 +11,6 @@ Bid.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     description: {
       type: DataTypes.STRING,
     },
@@ -24,7 +20,7 @@ Bid.init(
       defaultValue: DataTypes.NOW,
     },
     amount: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {
