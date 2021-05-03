@@ -1,17 +1,26 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "description": "I attended UT Boot Camp.",
+    "amount": 5000,
+    "user_id": 1,
+    "project_id": 1
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "description": "I need a new car!",
+    "amount": 10000,
+    "user_id": 1,
+    "project_id": 2
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "description": "I am really good at picking out wallpaper.",
+    "amount": 800,
+    "user_id": 2,
+    "project_id": 1
+  },
+  {
+    "description": "I am really good at picking out wallpaper.",
+    "amount": 2500,
+    "user_id": 2,
+    "project_id": 2
   }
 ]
