@@ -2,16 +2,19 @@
   {
     "name": "Sal",
     "email": "sal@hotmail.com",
+    "tier": "customer",
     "password": "password12345"
   },
   {
     "name": "Lernantino",
     "email": "lernantino@gmail.com",
+    "tier": "customer",
     "password": "password12345"
   },
   {
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
+    "tier": "customer",
     "password": "password12345"
   }
 ]
