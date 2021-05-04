@@ -5,7 +5,7 @@ body {
 }
 
 .bg-light {
-  background-color: #0e0b16 !important;
+  background-color: #e0e0e0 !important;
 }
 
 .bg-primary {
@@ -14,13 +14,26 @@ body {
 
 
 .text-light {
-  color: #e7dfdd !important;
+  color: #dde1e7 !important;
+}
+
+.text-dark {
+  color: #0e0b16 !important;
 }
 
 .btn-accent {
   background-color: #a239ca !important;
 }
 
+btn-accent2 {
+  background-color: #4717f6 !important;
+}
+
 .accent {
   color: #a239ca !important;
 }
+
+a {
+  color: inherit; 
+}
+
