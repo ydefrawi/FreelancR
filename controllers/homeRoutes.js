@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', { 
       projects, 
       logged_in: req.session.logged_in,
-      tier: req.session.tier
+      freelancer: req.session.freelancer
     });
   } catch (err) {
     res.status(500).json(err);
