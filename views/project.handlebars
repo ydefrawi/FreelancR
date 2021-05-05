@@ -1,3 +1,6 @@
+
+
+
 <div class="text-center">
   <h2>{{project.name}}</h2>
   <p>{{project.description}}</p>
@@ -7,4 +10,34 @@
       {{> bid-details}}
       {{/each}}
     </section>
+<canvas id="myChart" width="1600" height="900"></canvas>
 </div>
+
+<script>
+var bidAxis = [];
+var nameAxis = [];
+
+{{#each project.bids as |bid|}}
+var nameValue = {{bid.id}};
+nameAxis.push(nameValue);
+bidAxis.push({{bid.amount}})
+{{/each}}
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart (ctx, {
+type: 'bar',
+data: {
+  labels: nameAxis,
+  datasets: [{
+    label: 'Bid Comparisons',
+    data: bidAxis,
+                backgroundColor: [
+                '#a239ca',
+                '#a239ca',
+                '#a239ca'
+            ],
+    }]
+  }
+})
+  
+</script>
