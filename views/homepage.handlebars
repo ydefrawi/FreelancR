@@ -2,63 +2,64 @@
 <div class="container col-xl-12 col-xxl-8 px-4 py-5 bg-light">
   <div class="row align-items-center g-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
-      <h1 class="display-4 fw-bold lh-1 mb-3">  {{#if logged_in}}
-      <h1>Welcome 
-      {{#if freelancer}}
+      <h1 class="display-4 mb-3"> {{#if logged_in}}
+        <h1 class="display-5">Welcome
+          {{#if freelancer}}
           Freelancer!</h1>
-      {{else}}
-          Client!</h1>
+        {{else}}
+        Client!
+      </h1>
       {{/if}}
-  {{else}}
+      {{else}}
       <h1>Welcome! Please login or signup!</h1>
-  {{/if}}</h1>
-      <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      {{/if}}</h1>
+      <p class="col-lg-12 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required
+        form group has a validation state that can be triggered by attempting to submit the form without completing it.
+      </p>
+      <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
+        Project</button>
     </div>
 
-
-
-
-
-    
     <div class="col-10 mx-auto col-lg-5">
       {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+      <div class="col-md-8 ">
+        <h3>Current Projects:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        {{#each projects as |project|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+          </div>
+        </div>
+        {{/each}}
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+      {{/if}}
     </div>
-    {{/each}}
   </div>
-  {{/if}}
 </div>
-    </div>
-  </div>
 </div>
 
- <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create Project</button>
+
 
 {{#each projects as |project| }}
-    <ol class=" col-xl-12 col-xxl-8  m-0 ">
-        <li class="list-group-item  justify-content-between align-items-start bg-light">
-          <div class="ms-2 me-auto ">
-            <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
-            {{project.description}}
-          </div>
-          <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">💲</span>
+<ol class=" col-xl-12 col-xxl-8  m-0 ">
+  <li class="list-group-item  justify-content-between align-items-start bg-light">
+    <div class="ms-2 me-auto ">
+      <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
+      {{project.description}}
+    </div>
+    <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
       needed!</span>
-          <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date project.date_created}}</span>
-        </li>
-        </ol>
+    <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date
+      project.date_created}}</span>
+  </li>
+</ol>
 {{/each}}
 
-<button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create Project</button>
-
+<button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
+  Project</button>
