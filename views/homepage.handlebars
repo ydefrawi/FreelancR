@@ -23,6 +23,12 @@
             <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
             {{project.description}}
           </div>
+<<<<<<< HEAD
+          <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date project.date_created}}</span>
+        </li>
+        </ol>
+{{/each}}
+=======
           <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
@@ -31,3 +37,4 @@
         </li>
         </ol>
 {{/each}}
+>>>>>>> deaa4d2fbcb13e4fbb85fa0df672ef9bab70bc4c
