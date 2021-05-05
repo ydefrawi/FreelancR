@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.tier = userData.tier;
+      req.session.tier = userData.freelancer;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -37,12 +37,14 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.tier = userData.tier;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.status(200).json(userData);
     });
 
   } catch (err) {

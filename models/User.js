@@ -20,9 +20,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    tier: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    freelancer: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
     email: {
       type: DataTypes.STRING,
