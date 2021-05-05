@@ -7,8 +7,10 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.tier = userData.freelancer;
+      req.session.freelancer = userData.freelancer;
       req.session.logged_in = true;
+
+      console.log(req.session.freelancer);
 
       res.status(200).json(userData);
     });
@@ -41,7 +43,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.tier = userData.tier;
+      req.session.freelancer = userData.freelancer;
       req.session.logged_in = true;
       
       res.status(200).json(userData);
