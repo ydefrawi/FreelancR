@@ -48,7 +48,7 @@ router.get('/project/:id', async (req, res) => {
 
     console.log("one project:::" + project);
 
-    res.render('project', { project,
+    res.render('project', {project,
       logged_in: req.session.logged_in
     });
   } catch (err) {
