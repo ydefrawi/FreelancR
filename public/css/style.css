@@ -1,6 +1,6 @@
 
 body {
-  background-color: #0e0b16 !important;
+  background-color: #e0e0e0 !important;
   color: #0A0F0D important;
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -34,7 +34,7 @@ body {
 }
 
 .btn-accent {
-  background-color: #a239ca !important;
+  background-color: #8e13be !important;
 }
 
 btn-accent2 {
@@ -42,7 +42,7 @@ btn-accent2 {
 }
 
 .accent {
-  color: #a239ca !important;
+  color: #8e13be !important;
 }
 
 a {
