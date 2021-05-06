@@ -2,6 +2,18 @@
 body {
   background-color: #0e0b16 !important;
   color: #0A0F0D important;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: .5;
+  }
+  100% {
+      opacity: 1;
+   }
 }
 
 .bg-light {
