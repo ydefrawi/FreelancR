@@ -7,6 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     const newBid = await Bid.create({
       ...req.body,
       user_id: req.session.user_id,
+      project_id: req.params.id,
     });
 
     res.status(200).json(newBid);

@@ -16,12 +16,23 @@
       <p class="col-lg-12 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required
         form group has a validation state that can be triggered by attempting to submit the form without completing it.
       </p>
+      {{#if freelancer}}
+      <div id = "frelancer-welcome">
+        <h2>Review projects below to pick your next bidding opportunity!</h2>
+        </div>
+      {{else}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
+      {{/if}}
     </div>
 
+  {{#if logged_in}}
     <div class="col-10 mx-auto col-lg-5">
-      {{#if projects.length}}
+  {{#if freelancer}}
+    <div> Welcome, Freelancer! At FreelanR, you can view available projects to
+    bid on and submit bids for a project of your choosing! </div>
+  {{else}}
+   {{#if projects.length}}
       <div class="col-md-8 ">
         <h3>Current Projects:</h3>
 
@@ -34,10 +45,15 @@
             <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
           </div>
         </div>
-        {{/each}}
-      </div>
-      {{/if}}
-    </div>
+      {{/each}}
+  {{/if}}
+
+  {{/if}}
+</div>
+</div>
+  {{/if}}
+
+    
   </div>
 </div>
 </div>
@@ -61,5 +77,3 @@
 </ol>
 {{/each}}
 
-<button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
-  Project</button>
