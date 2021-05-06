@@ -100,6 +100,7 @@ router.get('/profile', async (req, res) => {
 
     res.render('profile', {
       ...user,
+      freelancer:req.session.freelancer,
       logged_in: true
     });
   } catch (err) {
