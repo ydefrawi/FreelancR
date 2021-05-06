@@ -1,6 +1,6 @@
 <!-- Loop over each object in the projects array -->
 <div class="container col-xl-12 col-xxl-8 px-4 py-5 bg-light">
-  <div class="row align-items-center g-5 py-5">
+  <div class="row justify-content-center align-items-center g-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
       <h1 class="display-4 mb-3"> {{#if logged_in}}
         <h1 class="display-5">Welcome
@@ -12,30 +12,53 @@
       {{/if}}
       {{else}}
       <h1>Welcome! Please login or signup!</h1>
+      <form class="p-4 p-md-5 border rounded-3 bg-light">
+        <div class="mb-3">
+          <label for="validationCustom04" class="form-label">What tier user are you?</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="false">Client</option>
+            <option value="true">Freelancer</option>
+          </select>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="checkbox mb-3">
+          </div>
+          <button class="w-100 btn btn-lg btn-accent text-light" type="submit">Sign up</button>
+          <hr class="my-4">
+          <small "text-muted">If you already have an account click <span><a class="accent"
+                href="/login">here</a></span></small>
+      </form>
       {{/if}}</h1>
-      <p class="col-lg-12 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required
-        form group has a validation state that can be triggered by attempting to submit the form without completing it.
-      </p>
       {{#if freelancer}}
-      <div id = "frelancer-welcome">
-        <h2>Review projects below to pick your next bidding opportunity!</h2>
-        </div>
+      <div class="justify-content-center col-lg-12 fs-4" id="frelancer-welcome">
+        <p>At FreelanR, you can view available projects to
+          bid on and submit bids for a project of your choosing. Review the projects below to pick your next bidding
+          opportunity.</p>
+      </div>
       {{else}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
       {{/if}}
     </div>
 
-  {{#if logged_in}}
+    {{#if logged_in}}
     <div class="col-10 mx-auto col-lg-5">
-  {{#if freelancer}}
-    <div> Welcome, Freelancer! At FreelanR, you can view available projects to
-    bid on and submit bids for a project of your choosing! </div>
-  {{else}}
-   {{#if projects.length}}
+      {{#if freelancer}}
+      {{!-- <div> Welcome, Freelancer! At FreelanR, you can view available projects to
+        bid on and submit bids for a project of your choosing! </div> --}}
+      {{else}}
+      {{#if projects.length}}
       <div class="col-md-8 ">
-        <h3>Current Projects:</h3>
-
+        <h3>Your Dashboard Is Below!</h3>
+{{!--     
         {{#each projects as |project|}}
         <div class="row mb-2">
           <div class="col-md-8">
@@ -45,20 +68,21 @@
             <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
           </div>
         </div>
-      {{/each}}
-  {{/if}}
+        {{/each}} --}}
+        {{/if}}
 
-  {{/if}}
-</div>
-</div>
-  {{/if}}
+        {{/if}}
+      </div>
+    </div>
+    {{/if}}
 
-    
+
   </div>
 </div>
 </div>
 
 
+{{#if logged_in}}
 
 {{#each projects as |project| }}
 <ol class=" col-xl-12 col-xxl-8  m-0 ">
@@ -70,9 +94,65 @@
     <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">Bidding starts at: 💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>!</span>
-    <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date
-      project.date_created}}</span>
+      <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date
+        project.date_created}}</span>
   </li>
 </ol>
 {{/each}}
+{{else}}
+<div class="container m-5">
 
+      <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+
+{{/if}}
