@@ -34,7 +34,7 @@
           <button class="w-100 btn btn-lg btn-accent text-light" type="submit">Sign up</button>
           <hr class="my-4">
           <small "text-muted">If you already have an account click <span><a class="accent"
-                href="/login">here</a></span>.</small>
+                href="/login">here</a></span></small>
       </form>
       {{/if}}</h1>
       {{#if freelancer}}
@@ -57,8 +57,8 @@
       {{else}}
       {{#if projects.length}}
       <div class="col-md-8 ">
-        <h3>Current Projects:</h3>
-
+        <h3>Your Dashboard Is Below!</h3>
+{{!--     
         {{#each projects as |project|}}
         <div class="row mb-2">
           <div class="col-md-8">
@@ -68,7 +68,7 @@
             <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
           </div>
         </div>
-        {{/each}}
+        {{/each}} --}}
         {{/if}}
 
         {{/if}}
@@ -80,6 +80,7 @@
   </div>
 </div>
 </div>
+
 
 
 {{#each projects as |project| }}
