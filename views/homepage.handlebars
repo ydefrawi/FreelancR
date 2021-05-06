@@ -31,7 +31,7 @@
         <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger delButton" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -42,7 +42,9 @@
   </div>
 </div>
 
- <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create Project</button>
+ <button type="button" onclick=window.location.href="/addProject" class="btn btn-accent m-2 text-light">Create Project</button>
+
+
 
 {{#each projects as |project| }}
     <ol class=" col-xl-12 col-xxl-8  m-0 ">
@@ -60,5 +62,4 @@
         </ol>
 {{/each}}
 
-<button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create Project</button>
-
+<button type="button" onclick=window.location.href='/addProject' class="btn btn-accent m-2 text-light">Create Project</button>

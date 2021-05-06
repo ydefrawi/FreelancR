@@ -127,4 +127,9 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/addProject', withAuth, async (req, res) => {
+  res.render('addproject')
+})
+
+
 module.exports = router;
