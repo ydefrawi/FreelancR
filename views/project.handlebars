@@ -4,9 +4,12 @@
 <div class="text-center text-dark">
   <h2 class="display-5">{{project.name}}</h2>
   <p>{{project.description}}</p>
+{{!-- Create and Delete Bid Buttons --}}
   <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-
-  <button type="button" onclick=window.location.href='/addBid/' class="btn btn-accent m-2 text-light">Create Bid</button>  <button type="button" data-id="{{project.id}}" class="btn btn-accent m-2 deleteProject text-light">Delete Project</button>
+  {{!-- <button type="button" onclick=window.location.href='/addBid/' class="btn btn-accent m-2 text-light">Create Bid</button>   --}}
+  <button type="button" onclick=window.location.href="/addBid/{{project.id}}" class="btn btn-accent m-2 text-light" id="bidButton">Create Bid</button><br>
+  <button type="button" data-id="{{project.id}}" class="btn btn-accent m-2 deleteProject text-light">Delete Project</button>
+    {{!-- ---------- --}}
     <section>
       {{#each project.bids as |bid|}}
       {{> bid-details}}

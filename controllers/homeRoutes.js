@@ -58,32 +58,32 @@ router.get('/project/:id', async (req, res) => {
 
 
 
-// GET all bids for project_id in Project
-router.get('/addBid/:project_id', async (req, res) => {
-  try {
-    const bidData = await Bid.findAll({
-      where: [
-        {
-          project_id: req.params.project_id
-        }
-      ],
-      include: [
-        {
-          model: User,
-          attributes: [
-            'name'
-          ]
-        }
-      ]
-    });
-    const bid = bidData.get({ plain: true });
-    console.log("BID:::" + bid);
-    res.render('bid', { bid, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// // GET all bids for project_id in Project
+// router.get('/addBid/:project_id', async (req, res) => {
+//   try {
+//     const bidData = await Bid.findAll({
+//       where: [
+//         {
+//           project_id: req.params.project_id
+//         }
+//       ],
+//       include: [
+//         {
+//           model: User,
+//           attributes: [
+//             'name'
+//           ]
+//         }
+//       ]
+//     });
+//     const bid = bidData.get({ plain: true });
+//     console.log("BID:::" + bid);
+//     res.render('bid', { bid, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 
@@ -109,19 +109,32 @@ router.get('/profile', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/addBid', async (req, res) => {
+// router.get('/addBid', async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Project }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render('addBid', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/addBid/:id', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+    const bidFormData = await Project.findByPk(req.params.id, {
     });
-
-    const user = userData.get({ plain: true });
-
-    res.render('addBid', {
-      ...user,
-      logged_in: true
+    const bidForm = bidFormData.get({ plain: true });
+    res.render('addbid', { bidForm,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
