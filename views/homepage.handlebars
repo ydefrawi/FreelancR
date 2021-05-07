@@ -1,9 +1,9 @@
 <!-- Loop over each object in the projects array -->
-<div class="container col-xl-12 col-xxl-8 px-4 py-5 bg-light">
+<div class="container col-xl-12 col-xxl-8 px-4 py-5 bg-light mb-5 shadow-lg">
   <div class="row justify-content-center align-items-center g-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
       <h1 class="display-4 mb-3"> {{#if logged_in}}
-        <h1 class="display-5">Welcome
+        <h1 class=" justify-content-center display-5">Welcome
           {{#if freelancer}}
           Freelancer! </h1>
         {{else}}
@@ -11,8 +11,8 @@
       </h1>
       {{/if}}
       {{else}}
-      <h1>Welcome to Freelanc<span class= "accent">R</span>!</h1> Please login or signup!</h1>
-          <p>At FreelanR, our primary goal is to make an impact on small businesses. We take pride in connecting the most skilled contractors with reputable clients with a live reverse auction system. Employers can create projects, set an asking price, and sit back as freelancers bid for opportunities. Freelancers can view projects and bid on jobs that suit them best!
+      <h1>Welcome to Freelanc<span class= "accent">R</span>!</h1>
+          <p>At FreelancR, our primary goal is to make an impact on small businesses. We take pride in connecting the most skilled contractors with reputable clients with a live reverse auction system. Employers can create projects, set an asking price, and sit back as freelancers bid for opportunities. Freelancers can view projects and bid on jobs that suit them best!
         </p>
         <h1>Login or sign up below!</h1>
       <form class="p-4 p-md-5 border rounded-3 bg-light signup-form">
@@ -64,7 +64,7 @@
       {{else}}
       {{#if projects.length}}
       <div class="col-md-10 ">
-        <h4>View all open projects below.</h4>
+        <h4 class=" display-5">View all open projects below.</h4>
 
         {{/if}}
 
@@ -86,21 +86,21 @@
     </div>
     <span class="badge btn-accent rounded-pill dash-info"><span for="img" aria-label="money">Bidding starts at: 💲</span>
       <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>!</span>
-      <span class="badge btn-accent rounded-pill dash-info">Created by {{project.user.name}} on {{format_date
+      <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>! |</span>
+      <span class="badge btn-accent rounded-pill dash-info">| Created by {{project.user.name}} on {{format_date
         project.date_created}}</span>
   </li>
 </ol>
 {{/each}}
 {{else}}
-<div class="container m-2">
+<div class="container">
   <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 {{!-- Card 1 --}}
     <div class="col">
-      <div class="card shadow-sm glass1">
+      <div class="card shadow-lg bg-secondary">
         <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
         <div class="card-body">
-          <h3 class="card-title">Freelancers</h3>
+          <h3 class="display-6 card-title">Freelancers</h3>
           <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide
             a small curated marketplace where your skills are always in demand.</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -112,10 +112,10 @@
     </div>
 {{!-- Card 2 --}}
     <div class="col">
-      <div class="card shadow-sm glass2">
+      <div class="card shadow-lg glass2">
         <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
         <div class="card-body">
-          <h3 class="card-title">Employers</h3>
+          <h3 class="display-6 pg-primary text-primary card-title">Employers</h3>
           <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all
             skilled, fluent in english, and determined to build great things with you.</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -127,10 +127,10 @@
     </div>
 {{!-- Card 3 --}}
     <div class="col">
-      <div class="card shadow-sm glass3">
+      <div class="card shadow-lg bg-primary">
         <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
         <div class="card-body">
-          <h3 class="card-title">Impact</h3>
+          <h3 class="display-6 card-title">Impact</h3>
           <p class="card-text">Our platform allows clients to post projects, asking prices, and see the bids roll in. As
             a freelancer, you can view all available projects and bid on projects that appeal to you!</p>
           <div class="d-flex justify-content-between align-items-center">
