@@ -1,4 +1,5 @@
 <!-- Loop over each object in the projects array -->
+
 <div class="container col-xl-12 col-xxl-8 px-4 py-5 bg-light mb-5 shadow-lg">
   <div class="row justify-content-center align-items-center g-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
@@ -48,6 +49,7 @@
           bid on and submit bids for a project of your choosing. Review the projects below to pick your next bidding
           opportunity.</p>
       </div>
+      
      
       {{else}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
@@ -59,8 +61,7 @@
     {{#if logged_in}}
     <div class="col-10 mx-auto col-lg-5">
       {{#if freelancer}}
-      {{!-- <div> Welcome, Freelancer! At FreelanR, you can view available projects to
-        bid on and submit bids for a project of your choosing! </div> --}}
+      <div class=""><img src="/images/photo-1486312338219-ce68d2c6f44d.jfif" alt="Pressing keys on keyboard" width="80%" height="80%"> </div>
       {{else}}
       {{#if projects.length}}
       <div class="col-md-10 ">
@@ -78,29 +79,33 @@
 
 {{#if logged_in}}
 {{#each projects as |project| }}
-<ol class=" col-xl-12 col-xxl-8  m-0 ">
+<div class="container">
+<ol class=" col-xl-12 col-xxl-8  m-0">
   <li class="list-group-item  justify-content-between align-items-start bg-light">
     <div class="ms-2 me-auto ">
       <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
       {{project.description}}
     </div>
-    <span class="badge btn-accent rounded-pill dash-info"><span for="img" aria-label="money">Bidding starts at: 💲</span>
+    <div class="d-flex">
+    <span class=" badge btn-accent rounded-pill dash-info"><span for="img" aria-label="money">Bidding starts at: 💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>! |</span>
       <span class="badge btn-accent rounded-pill dash-info">| Created by {{project.user.name}} on {{format_date
         project.date_created}}</span>
+        </div>
   </li>
 </ol>
+</div>
 {{/each}}
 {{else}}
 <div class="container">
   <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 {{!-- Card 1 --}}
     <div class="col">
-      <div class="card shadow-lg bg-secondary">
+      <div class="card shadow-lg bg-primary">
         <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
         <div class="card-body">
-          <h3 class="display-6 card-title">Freelancers</h3>
+          <h3 class="display-6 card-title text-white">Freelancers</h3>
           <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide
             a small curated marketplace where your skills are always in demand.</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -112,10 +117,10 @@
     </div>
 {{!-- Card 2 --}}
     <div class="col">
-      <div class="card shadow-lg glass2">
+      <div class="card shadow-lg bg-primary">
         <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
         <div class="card-body">
-          <h3 class="display-6 pg-primary text-primary card-title">Employers</h3>
+          <h3 class="display-6 pg-primary text-white card-title">Employers</h3>
           <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all
             skilled, fluent in english, and determined to build great things with you.</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -142,5 +147,6 @@
     </div>
   </div>
 {{/if}}
+</div>
 
 <script src="./js/signup.js"></script>
