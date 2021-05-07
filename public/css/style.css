@@ -67,7 +67,7 @@ a {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .glass3 {
-  background: rgba( 35, 206, 107, 0.85 );
+  background: rgba( 88, 125, 113, 0.85 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 13.5px );
   -webkit-backdrop-filter: blur( 13.5px );
@@ -81,5 +81,7 @@ a {
 }
 
 .card-title {
+  color:cornsilk;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
 }
