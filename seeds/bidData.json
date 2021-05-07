@@ -6,19 +6,19 @@
     "project_id": 1
   },
   {
-    "description": "I need a new car!",
+    "description": "Intimate knowledge of Javascript and Python. I'm the man for your job.",
     "amount": 10000,
     "user_id": 1,
     "project_id": 2
   },
   {
-    "description": "I am really good at picking out wallpaper.",
+    "description": "Expert in server architecture and administration. I can do this for you.",
     "amount": 800,
     "user_id": 2,
     "project_id": 1
   },
   {
-    "description": "I am really good at picking out wallpaper.",
+    "description": "IT Security Admin for 5 years",
     "amount": 2500,
     "user_id": 2,
     "project_id": 2

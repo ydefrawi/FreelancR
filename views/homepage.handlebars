@@ -11,7 +11,9 @@
       </h1>
       {{/if}}
       {{else}}
-      <h1>Welcome! Please login or signup!</h1>
+      <h1>Welcome to Freelanc<span class= "accent">R</span>! Please login or signup!</h1>
+          <p>At FreelanR, our primary goal is to make an impact on small businesses. We take pride in connecting the most skilled contractors with reputable clients with a live reverse auction system. Employers can create projects, set an asking price, and sit back as freelancers bid for opportunities. Freelancers can view projects and bid on jobs that suit them best!
+        </p>
       <form class="p-4 p-md-5 border rounded-3 bg-light signup-form">
         <div class="mb-3">
           <label for="validationCustom04" class="form-label">Client or Freelancer?</label>
@@ -38,6 +40,7 @@
                 href="/login">here</a></span></small>
       </form>
       {{/if}}</h1>
+      {{#if logged_in}}
       {{#if freelancer}}
       <div class="justify-content-center col-lg-12 fs-4" id="frelancer-welcome">
         <p>At FreelanR, you can view available projects to
@@ -48,6 +51,7 @@
       {{else}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
+      {{/if}}
       {{/if}}
     </div>
 
