@@ -43,7 +43,9 @@
           bid on and submit bids for a project of your choosing. Review the projects below to pick your next bidding
           opportunity.</p>
       </div>
+      {{#if logged_in}}
       {{else}}
+      {{/if}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
       {{/if}}
@@ -75,15 +77,11 @@
       </div>
     </div>
     {{/if}}
-
-
   </div>
 </div>
 </div>
 
-
 {{#if logged_in}}
-
 {{#each projects as |project| }}
 <ol class=" col-xl-12 col-xxl-8  m-0 ">
   <li class="list-group-item  justify-content-between align-items-start bg-light">
@@ -100,15 +98,17 @@
 </ol>
 {{/each}}
 {{else}}
-<div class="container m-5">
+<div class="container m-2">
 
       <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm glass1">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+           <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
 
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <h3 class="card-title">Freelancers</h3>
+
+              <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide a small curated marketplace where your skills are always in demand.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
@@ -119,10 +119,11 @@
         </div>
         <div class="col">
           <div class="card shadow-sm glass2">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+           <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
 
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h3 class="card-title">Employers</h3>
+              <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all skilled, fluent in english, and determined to build great things with you.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
       
@@ -134,10 +135,12 @@
         </div>
         <div class="col">
           <div class="card shadow-sm glass3">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+           <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"</img>
 
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h3 class="card-title">Synergy</h3>
+
+              <p class="card-text">Our platform allows clients to post projects, asking prices, and see the bids roll in. As a freelancer, you can view all available projects and bid on projects that appeal to you!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
