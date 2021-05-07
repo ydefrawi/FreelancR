@@ -108,6 +108,26 @@ router.get('/profile', async (req, res) => {
   }
 });
 
+router.get('/user-profile', async (req, res) => {
+  console.log("hello")
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+    
+    const user = userData.get({ plain: true });
+
+    res.render('user-profile', {
+      ...user,
+      freelancer:req.session.freelancer,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route
 // router.get('/addBid', async (req, res) => {
 //   try {

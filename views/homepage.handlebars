@@ -44,9 +44,8 @@
           bid on and submit bids for a project of your choosing. Review the projects below to pick your next bidding
           opportunity.</p>
       </div>
-      {{#if logged_in}}
+     
       {{else}}
-      {{/if}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
       {{/if}}
@@ -59,8 +58,8 @@
         bid on and submit bids for a project of your choosing! </div> --}}
       {{else}}
       {{#if projects.length}}
-      <div class="col-md-8 ">
-        <h3>Your Dashboard Is Below!</h3>
+      <div class="col-md-10 ">
+        <h4>View all open projects below.</h4>
 {{!--     
         {{#each projects as |project|}}
         <div class="row mb-2">
