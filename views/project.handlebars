@@ -5,12 +5,8 @@
   <h2 class="display-5">{{project.name}}</h2>
   <p>{{project.description}}</p>
   <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  {{#if project.user.freelancer}}
 
-  <button type="button" onclick=window.location.href='/addBid/' class="btn btn-accent m-2 text-light">Create Bid</button>
-  {{else}}
-  <button type="button" data-id="{{project.id}}" class="btn btn-accent m-2 deleteProject text-light">Delete Project</button>
-    {{/if}}
+  <button type="button" onclick=window.location.href='/addBid/' class="btn btn-accent m-2 text-light">Create Bid</button>  <button type="button" data-id="{{project.id}}" class="btn btn-accent m-2 deleteProject text-light">Delete Project</button>
     <section>
       {{#each project.bids as |bid|}}
       {{> bid-details}}
