@@ -36,7 +36,7 @@ router.get('/project/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['name','freelancer']
         },
         {
           model: Bid,
