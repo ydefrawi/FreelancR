@@ -7,15 +7,22 @@
 {{!-- Create and Delete Bid Buttons --}}
   <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
   {{!-- <button type="button" onclick=window.location.href='/addBid/' class="btn btn-accent m-2 text-light">Create Bid</button>   --}}
+  {{#if freelancer}}
   <button type="button" onclick=window.location.href="/addBid/{{project.id}}" class="btn btn-accent m-2 text-light" id="bidButton">Create Bid</button><br>
   <button type="button" data-id="{{project.id}}" class="btn btn-accent m-2 deleteProject text-light">Delete Project</button>
+  {{/if}}
     {{!-- ---------- --}}
     <section>
       {{#each project.bids as |bid|}}
       {{> bid-details}}
       {{/each}}
     </section>
+
 <canvas id="myChart" width="1600" height="900"></canvas>
+    {{#if freelancer}}
+    {{else}}
+      <button type="button" data-id="{{project.id}}" class="btn btn-danger m-2 deleteProject text-light">Delete Project Permanently</button>
+    {{/if}}
 </div>
 
 <script>
