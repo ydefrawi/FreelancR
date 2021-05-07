@@ -1,0 +1,39 @@
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Your Profile</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"><img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" width="300"></p>
+      <h2>{{name}}</h2>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      </div>
+    </div>
+  </div>
+
+<ul class="list-group">
+  <li class="list-group-item"><h6>User Name: </h6>{{name}}</li>
+  <li class="list-group-item"><h6>Email:</h6> {{email}}</li>
+  {{#if freelancer}}
+  <li class="list-group-item"><h6>Tier:</h6> Freelancer</li>
+{{else}}
+  <li class="list-group-item"><h6>Tier:</h6> Client</li>
+  {{/if}}
+</ul>
+
+<div class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="display-5 fw-bold"> Your Projects </li>
+      </ul>
+    </div>
+
+ {{#each projects as |project|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <span><h4><a href="/project/{{project.id}}">{{project.name}}</a></h4></span> Asking Price: ${{format_amount starting_price}}
+          </div>
+          <div class="col-md-4">
+             <button type="button" data-id="{{project.id}}" class="btn btn-danger m-2 deleteProject text-light">Delete Project Permanently</button>
+          </div>
+        </div>
+{{/each}}
+
+<script src="/js/deleteFromProfile.js"></script>

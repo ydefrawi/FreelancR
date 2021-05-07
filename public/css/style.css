@@ -50,27 +50,42 @@ a {
 }
 
 .glass1 {
-  background: rgba( 153, 81, 233, 1.00 );
+  background: rgba( 196, 32, 33, 0.85 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20.0px );
-  -webkit-backdrop-filter: blur( 20.0px );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .glass2 {
-  background: rgba( 129, 38, 236, 1.00 );
+  background: rgba( 27, 154, 170, 0.85 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20.0px );
-  -webkit-backdrop-filter: blur( 20.0px );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .glass3 {
-  background: rgba( 100, 0, 217, 1.00 );
+  background: rgba( 88, 125, 113, 0.85 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20.0px );
-  -webkit-backdrop-filter: blur( 20.0px );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card-text {
+  color:white;
+  font-weight: bolder;
+}
+
+.card-title {
+  color:cornsilk;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.dash-info{
+  font-size: 15px;
 }

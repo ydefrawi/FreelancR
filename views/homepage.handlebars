@@ -5,29 +5,33 @@
       <h1 class="display-4 mb-3"> {{#if logged_in}}
         <h1 class="display-5">Welcome
           {{#if freelancer}}
-          Freelancer!</h1>
+          Freelancer! </h1>
         {{else}}
         Client!
       </h1>
       {{/if}}
       {{else}}
-      <h1>Welcome! Please login or signup!</h1>
-      <form class="p-4 p-md-5 border rounded-3 bg-light">
+      <h1>Welcome to Freelanc<span class= "accent">R</span>!</h1> Please login or signup!</h1>
+          <p>At FreelanR, our primary goal is to make an impact on small businesses. We take pride in connecting the most skilled contractors with reputable clients with a live reverse auction system. Employers can create projects, set an asking price, and sit back as freelancers bid for opportunities. Freelancers can view projects and bid on jobs that suit them best!
+        </p>
+        <h1>Login or sign up below!</h1>
+      <form class="p-4 p-md-5 border rounded-3 bg-light signup-form">
         <div class="mb-3">
-          <label for="validationCustom04" class="form-label">What tier user are you?</label>
+          <label for="validationCustom04" class="form-label">Client or Freelancer?</label>
           <select class="form-select" id="validationCustom04" required>
             <option selected disabled value="">Choose...</option>
             <option value="false">Client</option>
             <option value="true">Freelancer</option>
           </select>
           </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+          <div class="form-input">
+            <input type="name" class="form-control" placeholder="Name" id="name-signup">
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+          <div class="form-input">
+            <input type="email" class="form-control"  placeholder="Email Address" id="email-signup">
+          </div>
+          <div class="form-input">
+            <input type="password" class="form-control" type="password" minlength="8" id="password-signup" placeholder="Password">
           </div>
           <div class="checkbox mb-3">
           </div>
@@ -37,15 +41,18 @@
                 href="/login">here</a></span></small>
       </form>
       {{/if}}</h1>
+      {{#if logged_in}}
       {{#if freelancer}}
       <div class="justify-content-center col-lg-12 fs-4" id="frelancer-welcome">
         <p>At FreelanR, you can view available projects to
           bid on and submit bids for a project of your choosing. Review the projects below to pick your next bidding
           opportunity.</p>
       </div>
+     
       {{else}}
       <button type="button" onclick=window.location.href='/profile/' class="btn btn-accent m-2 text-light">Create
         Project</button>
+      {{/if}}
       {{/if}}
     </div>
 
@@ -56,34 +63,20 @@
         bid on and submit bids for a project of your choosing! </div> --}}
       {{else}}
       {{#if projects.length}}
-      <div class="col-md-8 ">
-        <h3>Your Dashboard Is Below!</h3>
-{{!--     
-        {{#each projects as |project|}}
-        <div class="row mb-2">
-          <div class="col-md-8">
-            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-          </div>
-          <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-          </div>
-        </div>
-        {{/each}} --}}
+      <div class="col-md-10 ">
+        <h4>View all open projects below.</h4>
+
         {{/if}}
 
         {{/if}}
       </div>
     </div>
     {{/if}}
-
-
   </div>
 </div>
 </div>
 
-
 {{#if logged_in}}
-
 {{#each projects as |project| }}
 <ol class=" col-xl-12 col-xxl-8  m-0 ">
   <li class="list-group-item  justify-content-between align-items-start bg-light">
@@ -91,62 +84,63 @@
       <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
       {{project.description}}
     </div>
-    <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">Bidding starts at: 💲</span>
+    <span class="badge btn-accent rounded-pill dash-info"><span for="img" aria-label="money">Bidding starts at: 💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>!</span>
-      <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date
+      <span class="badge btn-accent rounded-pill dash-info">Created by {{project.user.name}} on {{format_date
         project.date_created}}</span>
   </li>
 </ol>
 {{/each}}
 {{else}}
-<div class="container m-5">
-
-      <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm glass1">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                </div>
-               
-              </div>
+<div class="container m-2">
+  <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{{!-- Card 1 --}}
+    <div class="col">
+      <div class="card shadow-sm glass1">
+        <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
+        <div class="card-body">
+          <h3 class="card-title">Freelancers</h3>
+          <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide
+            a small curated marketplace where your skills are always in demand.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm glass2">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-      
-                </div>
-             
-              </div>
+      </div>
+    </div>
+{{!-- Card 2 --}}
+    <div class="col">
+      <div class="card shadow-sm glass2">
+        <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <div class="card-body">
+          <h3 class="card-title">Employers</h3>
+          <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all
+            skilled, fluent in english, and determined to build great things with you.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm glass3">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                </div>
-              </div>
+      </div>
+    </div>
+{{!-- Card 3 --}}
+    <div class="col">
+      <div class="card shadow-sm glass3">
+        <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <div class="card-body">
+          <h3 class="card-title">Impact</h3>
+          <p class="card-text">Our platform allows clients to post projects, asking prices, and see the bids roll in. As
+            a freelancer, you can view all available projects and bid on projects that appeal to you!</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-</div>
-
-
-
+      </div>
+    </div>
+  </div>
 {{/if}}
+
+<script src="./js/signup.js"></script>

@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       projects, 
+      name: req.session.name,
       logged_in: req.session.logged_in,
       freelancer: req.session.freelancer
     });
@@ -99,6 +100,25 @@ router.get('/profile', async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('profile', {
+      ...user,
+      freelancer:req.session.freelancer,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/user-profile', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('user-profile', {
       ...user,
       freelancer:req.session.freelancer,
       logged_in: true

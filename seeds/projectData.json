@@ -5,13 +5,28 @@
     "starting_price": 5000
   },
   {
-    "name": "The Ultimate Tech Quiz",
+    "name": "Tech Quiz App",
     "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "starting_price": 10000
+    "starting_price": 6000
   },
   {
-    "name": "Roll 'Em Up",
+    "name": "Roll 'Em Up Game",
     "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "starting_price": 8000
+  },
+  {
+    "name": "Wordpress Website",
+    "description": "I need a website developed for my local law firm. HTML/CSS only",
     "starting_price": 800
+  },
+  {
+    "name": "CRM For Law Firm",
+    "description": "Require a CRM system on my law firm website's back end. Must be secure.",
+    "starting_price": 3000
+  },
+  {
+    "name": "SharePoint integration",
+    "description": "Require a solution to integrate our payroll system with microsoft SharePoint",
+    "starting_price": 3000
   }
 ]
