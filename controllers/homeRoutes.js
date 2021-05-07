@@ -109,13 +109,12 @@ router.get('/profile', async (req, res) => {
 });
 
 router.get('/user-profile', async (req, res) => {
-  console.log("hello")
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Project }],
     });
-    
+
     const user = userData.get({ plain: true });
 
     res.render('user-profile', {

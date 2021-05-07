@@ -65,17 +65,7 @@
       {{#if projects.length}}
       <div class="col-md-10 ">
         <h4>View all open projects below.</h4>
-{{!--     
-        {{#each projects as |project|}}
-        <div class="row mb-2">
-          <div class="col-md-8">
-            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-          </div>
-          <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-          </div>
-        </div>
-        {{/each}} --}}
+
         {{/if}}
 
         {{/if}}
@@ -94,10 +84,10 @@
       <div class="h2 accent"><a href="/project/{{project.id}}">{{project.name}}</a></div>
       {{project.description}}
     </div>
-    <span class="badge btn-accent rounded-pill"><span for="img" aria-label="money">Bidding starts at: 💲</span>
+    <span class="badge btn-accent rounded-pill dash-info"><span for="img" aria-label="money">Bidding starts at: 💲</span>
       <!-- Pass needed_funding value to the helper function -->
       <span class="dollar-amount">{{format_amount project.starting_price}}</span><span>!</span>
-      <span class="badge btn-accent rounded-pill">Created by {{project.user.name}} on {{format_date
+      <span class="badge btn-accent rounded-pill dash-info">Created by {{project.user.name}} on {{format_date
         project.date_created}}</span>
   </li>
 </ol>
