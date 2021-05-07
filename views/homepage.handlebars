@@ -12,22 +12,23 @@
       {{/if}}
       {{else}}
       <h1>Welcome! Please login or signup!</h1>
-      <form class="p-4 p-md-5 border rounded-3 bg-light">
+      <form class="p-4 p-md-5 border rounded-3 bg-light signup-form">
         <div class="mb-3">
-          <label for="validationCustom04" class="form-label">What tier user are you?</label>
+          <label for="validationCustom04" class="form-label">Client or Freelancer?</label>
           <select class="form-select" id="validationCustom04" required>
             <option selected disabled value="">Choose...</option>
             <option value="false">Client</option>
             <option value="true">Freelancer</option>
           </select>
           </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+          <div class="form-input">
+            <input type="name" class="form-control" placeholder="Name" id="name-signup">
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+          <div class="form-input">
+            <input type="email" class="form-control"  placeholder="Email Address" id="email-signup">
+          </div>
+          <div class="form-input">
+            <input type="password" class="form-control" type="password" minlength="8" id="password-signup" placeholder="Password">
           </div>
           <div class="checkbox mb-3">
           </div>
@@ -99,57 +100,53 @@
 {{/each}}
 {{else}}
 <div class="container m-2">
-
-      <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm glass1">
-           <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
-
-            <div class="card-body">
-               <h3 class="card-title">Freelancers</h3>
-
-              <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide a small curated marketplace where your skills are always in demand.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                </div>
-               
-              </div>
+  <div class="row justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{{!-- Card 1 --}}
+    <div class="col">
+      <div class="card shadow-sm glass1">
+        <img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"></img>
+        <div class="card-body">
+          <h3 class="card-title">Freelancers</h3>
+          <p class="card-text">In the new gig-economy, it can be hard to find work out there as a freelancer. We provide
+            a small curated marketplace where your skills are always in demand.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm glass2">
-           <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
-
-            <div class="card-body">
-              <h3 class="card-title">Employers</h3>
-              <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all skilled, fluent in english, and determined to build great things with you.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-      
-                </div>
-             
-              </div>
+      </div>
+    </div>
+{{!-- Card 2 --}}
+    <div class="col">
+      <div class="card shadow-sm glass2">
+        <img src="https://images.unsplash.com/photo-1583263496887-4e3046c78090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <div class="card-body">
+          <h3 class="card-title">Employers</h3>
+          <p class="card-text">At FreelancR, we do the vetting for you. Unlike the competition, our contractors are all
+            skilled, fluent in english, and determined to build great things with you.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm glass3">
-           <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"</img>
-
-            <div class="card-body">
-                            <h3 class="card-title">Impact</h3>
-
-              <p class="card-text">Our platform allows clients to post projects, asking prices, and see the bids roll in. As a freelancer, you can view all available projects and bid on projects that appeal to you!</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                </div>
-              </div>
+      </div>
+    </div>
+{{!-- Card 3 --}}
+    <div class="col">
+      <div class="card shadow-sm glass3">
+        <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        <div class="card-body">
+          <h3 class="card-title">Impact</h3>
+          <p class="card-text">Our platform allows clients to post projects, asking prices, and see the bids roll in. As
+            a freelancer, you can view all available projects and bid on projects that appeal to you!</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
             </div>
           </div>
         </div>
-</div>
-
-
-
+      </div>
+    </div>
+  </div>
 {{/if}}
+
+<script src="./js/signup.js"></script>
