@@ -1,26 +1,50 @@
 [
   {
     "description": "I attended UT Boot Camp.",
-    "amount": 5000,
-    "user_id": 1,
+    "amount": 55,
+    "user_id": 3,
     "project_id": 1
   },
   {
-    "description": "Intimate knowledge of Javascript and Python. I'm the man for your job.",
-    "amount": 10000,
-    "user_id": 1,
+    "description": "I have 23 years of experience!",
+    "amount": 35,
+    "user_id": 4,
+    "project_id": 1
+  },
+  {
+    "description": "I am really good at picking out stock photos.",
+    "amount": 80,
+    "user_id": 4,
+    "project_id": 1
+  },
+  {
+    "description": "I wrote handlebars, unfortunately.",
+    "amount": 150,
+    "user_id": 4,
     "project_id": 2
   },
   {
-    "description": "Expert in server architecture and administration. I can do this for you.",
-    "amount": 800,
-    "user_id": 2,
-    "project_id": 1
+    "description": "I am really good at picking out wallpaper.",
+    "amount": 175,
+    "user_id": 4,
+    "project_id": 2
   },
   {
-    "description": "IT Security Admin for 5 years",
-    "amount": 2500,
-    "user_id": 2,
+    "description": "I have been a tutor for 3 different cohorts.",
+    "amount": 250,
+    "user_id": 4,
+    "project_id": 2
+  },
+  {
+    "description": "I am very organized",
+    "amount": 280,
+    "user_id": 4,
+    "project_id": 2
+  },
+  {
+    "description": "I've worked in Github since its inception.",
+    "amount": 395,
+    "user_id": 4,
     "project_id": 2
   }
 ]

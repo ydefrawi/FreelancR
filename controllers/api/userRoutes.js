@@ -39,9 +39,6 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
-
-
     req.session.save(() => {
       req.session.name=userData.name;
       req.session.user_id = userData.id;

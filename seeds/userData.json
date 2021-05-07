@@ -1,24 +1,24 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
+    "name": "Carlisle Richardson",
+    "email": "carli@hotmail.com",
     "freelancer": false,
     "password": "password12345"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
+    "name": "Tyrel Bennings",
+    "email": "@gmail.com",
     "freelancer": false,
     "password": "password12345"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
+    "name": "Roland Michaels",
+    "email": "roland290@aol.com",
     "freelancer": true,
     "password": "password12345"
   },
   {
-    "name": "Tom Tango",
+    "name": "Bob Loblaw",
     "email": "t@aol.com",
     "freelancer": true,
     "password": "password12345"

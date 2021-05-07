@@ -1,18 +1,18 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "starting_price": 5000
+    "name": "LinkedIn Help",
+    "description": "I need someone to rework my LinkedIn experience.",
+    "starting_price": 50
   },
   {
-    "name": "Tech Quiz App",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "starting_price": 6000
+    "name": "Github help",
+    "description": "I break my code everytime I push origin",
+    "starting_price": 100
   },
   {
-    "name": "Roll 'Em Up Game",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "starting_price": 8000
+    "name": "Scrawler",
+    "description": "I have an idea for a side scroller crawling game.",
+    "starting_price": 800
   },
   {
     "name": "Wordpress Website",
@@ -26,7 +26,7 @@
   },
   {
     "name": "SharePoint integration",
-    "description": "Require a solution to integrate our payroll system with microsoft SharePoint",
+    "description": "Require a solution to integrate our law firm's payroll system with microsoft SharePoint",
     "starting_price": 3000
   }
 ]
