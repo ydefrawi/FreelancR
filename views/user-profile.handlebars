@@ -1,15 +1,18 @@
 
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Your Profile</h1>
+    <h1 class="display-3 ">Your Profile</h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4"><img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" width="300"></p>
-      <h2>{{name}}</h2>
+      <p class="lead mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg></p>
+      <h2 class="display-6">{{name}}</h2>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       </div>
     </div>
   </div>
 
-<ul class="list-group">
+<ul class="list-group shadow-lg">
   <li class="list-group-item"><h6>User Name: </h6>{{name}}</li>
   <li class="list-group-item"><h6>Email:</h6> {{email}}</li>
   {{#if freelancer}}
@@ -21,7 +24,7 @@
 
 <div class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="display-5 fw-bold"> Your Projects </li>
+        <li class="display-5 "> Your Projects </li>
       </ul>
     </div>
 

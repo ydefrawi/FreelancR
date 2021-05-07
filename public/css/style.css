@@ -89,3 +89,8 @@ a {
 .dash-info{
   font-size: 15px;
 }
+
+.bg-image {
+  background-image: url("/images/laptop-on-a-round-wooden-table-flat-lay-picjumbo-com.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+}
