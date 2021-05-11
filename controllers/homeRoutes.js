@@ -153,7 +153,7 @@ router.get('/addBid/:id', withAuth, async (req, res) => {
     const bidFormData = await Project.findByPk(req.params.id, {
     });
     const bidForm = bidFormData.get({ plain: true });
-    res.render('addbid', { bidForm,
+    res.render('addBid', { bidForm,
       logged_in: req.session.logged_in
     });
   } catch (err) {
