@@ -50,6 +50,6 @@
       }
   }
   
-document.querySelector('.addbid-form').addEventListener("submit", addbidFormHandler);
+// document.querySelector('.addbid-form').addEventListener("submit", addbidFormHandler);
 
-document.querySelector('.delButton').addEventListener("click", delbidFormHandler);
+// document.querySelector('.delButton').addEventListener("click", delbidFormHandler);
